@@ -72,33 +72,27 @@ public void limpiar() {
         }
 
     }
-
-    //_______________________________________________________________________________________________
-    //Modificar un registro
+ // Modificar un registro
     public void actualizar() {
-
         DAOEmpleadoImplementacion empleado_dao = new DAOEmpleadoImplementacion();
-
         Empleado empleado = new Empleado();
 
         if (cajaTextoId.getText().equals("") || cajaTextoNombre.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor ingrese el registro que desea modificar");
         } else {
             int id = Integer.parseInt(cajaTextoId.getText());
-
             String nombre = cajaTextoNombre.getText();
 
             empleado.setId(id);
-
             empleado.setEmpleado(nombre);
 
             empleado_dao.modificar(empleado);
 
             JOptionPane.showMessageDialog(null, "Registro modificado exitosamente");
-
         }
-
     }
+    //_______________________________________________________________________________________________
+   
 
 
     @SuppressWarnings("unchecked")
